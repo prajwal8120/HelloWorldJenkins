@@ -1,0 +1,27 @@
+pipeline:
+  name: build_pipeline
+  identifier: build_pipeline
+  projectIdentifier: Jenkinsdeploy
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Jenkins-build
+        identifier: Jenkinsbuild
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: JenkinsBuild
+                  name: Jenkins_build_pipeline
+                  identifier: Jenkins_build_pipeline
+                  spec:
+                    connectorRef: jenkinsconnector
+                    jobName: Harness/harness-poc
+                    jobParameter: []
+                    unstableStatusAsSuccess: false
+                    useConnectorUrlForJobExecution: true
+                  timeout: 10m
+        tags: {}
