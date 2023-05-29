@@ -24,4 +24,5 @@ pipeline:
                     unstableStatusAsSuccess: false
                     useConnectorUrlForJobExecution: true
                   timeout: 10m
+                  failureStrategies: []
         tags: {}
